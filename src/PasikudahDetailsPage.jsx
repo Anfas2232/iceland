@@ -143,7 +143,7 @@ const Section = ({ title, cards, id }) => (
 
 // --- BackToTopButton Component ---
 const BackToTopButton = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  
   useEffect(() => {
     const toggle = () => setIsVisible(window.pageYOffset > 300);
     window.addEventListener('scroll', toggle);

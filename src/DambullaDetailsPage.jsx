@@ -34,7 +34,7 @@ const Slideshow = ({ slides }) => {
   }, []);
 
   return (
-    <div id="anuradhapuraCarousel" className="carousel slide carousel-fade mb-5">
+    <div id="DambullaCarousel" className="carousel slide carousel-fade mb-5">
       <div className="carousel-inner">
         {slides.map((slide, idx) => (
           <div key={idx} className={`carousel-item ${idx === 0 ? 'active' : ''}`}>
@@ -143,7 +143,7 @@ const Section = ({ title, cards, id }) => (
 
 // --- BackToTopButton Component ---
 const BackToTopButton = () => {
-  const [isVisible, setIsVisible] = useState(false);
+ 
   useEffect(() => {
     const toggle = () => setIsVisible(window.pageYOffset > 300);
     window.addEventListener('scroll', toggle);

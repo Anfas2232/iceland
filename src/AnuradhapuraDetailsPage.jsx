@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -143,7 +142,7 @@ const Section = ({ title, cards, id }) => (
 
 // --- BackToTopButton Component ---
 const BackToTopButton = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  
   useEffect(() => {
     const toggle = () => setIsVisible(window.pageYOffset > 300);
     window.addEventListener('scroll', toggle);
