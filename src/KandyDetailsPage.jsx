@@ -1,11 +1,8 @@
-
-
-
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Carousel } from 'bootstrap';
-import { ArrowUp, ArrowLeft } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 
 import NavBar from './NavBar';
 import './NavBar.css';
