@@ -88,6 +88,39 @@ const Slideshow = ({ slides }) => {
 };
 
 // --- BackButton Component ---
+const BackToTopButton = () => {
+  const [isVisible, setIsVisible] = useState(false); // State declare செய்ய வேண்டும்
+
+  useEffect(() => {
+    const toggle = () => setIsVisible(window.pageYOffset > 300);
+    window.addEventListener('scroll', toggle);
+    return () => window.removeEventListener('scroll', toggle);
+  }, []);
+
+  if (!isVisible) return null; // scroll 300px ஆகாத போது button காட்டாதே
+
+  return (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      className="back-to-top-btn"
+      style={{
+        position: 'fixed',
+        bottom: '40px',
+        right: '40px',
+        padding: '10px 15px',
+        fontSize: '16px',
+        borderRadius: '50%',
+        backgroundColor: '#6f42c1',
+        color: '#fff',
+        border: 'none',
+        cursor: 'pointer',
+        zIndex: 1000,
+      }}
+    >
+      ⬆
+    </button>
+  );
+};
 const BackButton = () => {
   const navigate = useNavigate();
   return (
@@ -108,6 +141,7 @@ const BackButton = () => {
     </div>
   );
 };
+
 
 // --- Card Component ---
 const Card = ({ title, description, image }) => (
@@ -141,16 +175,6 @@ const Section = ({ title, cards, id }) => (
   </section>
 );
 
-// --- BackToTopButton Component ---
-const BackToTopButton = () => {
-  
-  useEffect(() => {
-    const toggle = () => setIsVisible(window.pageYOffset > 300);
-    window.addEventListener('scroll', toggle);
-    return () => window.removeEventListener('scroll', toggle);
-  }, []);
-  
-};
 
 // --- Main Page ---
 const BentotaDetailsPage = () => {
