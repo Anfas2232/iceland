@@ -1,8 +1,8 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import './packges.css';
 
-// --- Image Imports ---
+
 
 import hospital from './images/starnt.jpg';
 import str from './images/str.jpg';
